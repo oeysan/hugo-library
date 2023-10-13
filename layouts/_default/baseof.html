@@ -1,4 +1,7 @@
-{{ if ne .Site.Params.version "1.0" }}
+{{ $versionParts := split .Site.Params.version "." }}
+{{ $majorMinorVersion := slice (index $versionParts 0) (index $versionParts 1) }}
+
+{{ if ne (printf "%s.%s" (index $majorMinorVersion 0) (index $majorMinorVersion 1)) "0.1" }}
   {{ errorf "\n\nCheck your theme version\n" }}
 {{ end }}
 <!DOCTYPE html>
@@ -8,8 +11,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>
     {{ block "title" . }}
-      {{ if .IsPage }}{{ .Title }} - {{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}
-    {{ end }}
+      {{ if or .IsHome (not .Title) }}
+        {{ $.Site.Title }}{{ with $.Site.Params.subtitle }} - {{ . }}{{ end }}
+      {{ else }}
+        {{ $.Site.Title }} - {{ .Title }}
+      {{ end }}
+    {{ end }}  
   </title>
   {{ partial "head.html" . }} <!-- Include partial for head section -->
 </head>

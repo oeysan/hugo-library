@@ -1,5 +1,4 @@
-theme: "hugo-library"
-baseURL: "http://localhost:4321/"
+baseURL: "/"
 defaultContentLanguage: "no"
 defaultContentLanguageInSubdir: true
 disableFastRender: true
@@ -19,7 +18,7 @@ languages:
       - name: Arkivet
         url: "/no/archive"
         weight: 20
-      - name: English
+      - name: Engelsk
         identifier: "change-lang"
         url: "en"
         weight: 30
@@ -38,7 +37,7 @@ languages:
       - name: Overview
         url: "/en/overview"
         weight: 10
-      - name: Archive
+      - name: Arkivet
         url: "/en/archive"
         weight: 20
       - name: Norsk
@@ -47,7 +46,6 @@ languages:
         weight: 30
     params:
       subtitle: a Cristin library for INN
-      footer: Bam!
     title: The Archive
     weight: 2
 
@@ -71,20 +69,7 @@ taxonomies:
   tag: "tags"
 
 params:
-  version: "0.1.0"
-  subfolder: "/"
-  keywords: 
-  - "Hugo"
-  - "theme"
-  - "library"
-  - "Zotero"
-  description: "Hugo Library theme"
-  customJS: []
-  customCSS: []
-  CDN: 
-  - "https://cdn.jsdelivr.net/npm/line-awesome@1.3.0/dist/line-awesome/css/line-awesome.min.css"
-  - "https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"
-  - "https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"
+  version: "1.0"
   charts:
     - "about"
     - "sdg_doughnut"
