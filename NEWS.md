@@ -1,3 +1,7 @@
+# Hugo Library 0.1.5 
+
+* Minor bug in `SCSS` concerning max-width
+
 # Hugo Library 0.1.4 
 
 * Theme updated to newest `c2z4uni` and now incorporates 
